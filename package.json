@@ -1,0 +1,42 @@
+{
+  "name": "timestamp",
+  "version": "0.0.0",
+  "description": "Insert a small timestamp",
+  "license": "MIT",
+  "repository": "RichardLitt/timestamp",
+  "author": {
+    "name": "Richard Littauer",
+    "email": "richard.littauer@gmail.com",
+    "url": "burntfen.com"
+  },
+  "bin": "cli.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "xo && mocha"
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "cli-app",
+    "cli",
+    ""
+  ],
+  "dependencies": {
+    "meow": "^3.3.0",
+    "moment": "^2.10.6"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "xo": "^0.9.0"
+  },
+  "xo": {
+    "envs": [
+      "node",
+      "mocha"
+    ]
+  }
+}
