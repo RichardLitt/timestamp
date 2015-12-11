@@ -1,6 +1,6 @@
 # timestamp [![Build Status](https://travis-ci.org/RichardLitt/timestamp.svg?branch=master)](https://travis-ci.org/RichardLitt/timestamp)
 
-> My rad module
+> Some simple timestamp tools
 
 
 ## Install

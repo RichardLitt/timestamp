@@ -1,22 +1,16 @@
 #!/usr/bin/env node
-'use strict';
-// var meow = require('meow');
-var timestamp = require('./');
+'use strict'
 
-// var cli = meow({
-// 	help: [
-// 		'Usage',
-// 		'  $ timestamp [input]',
-// 		'',
-// 		'Options',
-// 		'  --foo  Lorem ipsum. [Default: false]',
-// 		'',
-// 		'Examples',
-// 		'  $ timestamp',
-// 		'  unicorns & rainbows',
-// 		'  $ timestamp ponies',
-// 		'  ponies & rainbows'
-// 	]
-// });
+var argv = require('minimist')(process.argv.slice(2), {
+  alias: {
+    f: 'file'
+  }
+})
+var timestamp = require('./')
 
-console.log(timestamp());
+if (argv['file']) {
+  timestamp().readFileLines(argv['file'])
+} else {
+  console.log(timestamp().stamp())
+  process.exit(1)
+}
