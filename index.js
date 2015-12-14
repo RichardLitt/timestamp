@@ -9,14 +9,27 @@ module.exports = function () {
     return moment(b, format).diff(moment(a, format), outputMeasure)
   }
 
-  function readFileLines (filename) {
+  function readFileLines (filename, sum) {
     var rl = require('readline').createInterface({
       input: require('fs').createReadStream(filename)
     })
 
+    var times = []
+
     rl.on('line', function (line) {
       let timePeriod = line.split(' -- ')
-      console.log(getMinuteDifference(timePeriod, 'minutes'))
+      let difference = getMinuteDifference(timePeriod, 'minutes')
+      times.push(difference)
+      console.log(difference)
+    })
+
+    rl.on('close', function () {
+      if (sum !== false) {
+        let minutes = times.reduce(function (a, b) {
+          return a + b
+        })
+        console.log(`=====\nTotal:\n${Math.floor(minutes / 60)} hours, ${minutes % 60} minutes`)
+      }
     })
   }
 

@@ -8,7 +8,9 @@ var argv = require('minimist')(process.argv.slice(2), {
 })
 var timestamp = require('./')
 
-if (argv['file']) {
+if (argv['file'] && argv['sum'] === false) {
+  timestamp().readFileLines(argv['file'], false)
+} else if (argv['file']) {
   timestamp().readFileLines(argv['file'])
 } else {
   console.log(timestamp().stamp())

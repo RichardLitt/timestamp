@@ -24,22 +24,22 @@ timestamp();
 
 ## API
 
-### timestamp(input, [options])
+### timestamp() methods
 
-#### input
+#### readFileLines
 
-Type: `string`
+Type: `path`
 
-Lorem ipsum.
+Prints out minute totals for two moment points separated by -- from a file
 
 #### options
 
-##### foo
+##### no-sum
 
 Type: `boolean`  
 Default: `false`
 
-Lorem ipsum.
+Silences print out of total hours.
 
 
 ## CLI
