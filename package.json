@@ -1,6 +1,6 @@
 {
   "name": "rl-timestamp",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Insert a small timestamp",
   "license": "MIT",
   "repository": "RichardLitt/timestamp",
