@@ -2,15 +2,11 @@
 
 > Some simple timestamp tools
 
-
 ## Install
 
-```
-$ npm install --save rl-timestamp
-```
+    $ npm install --save rl-timestamp
 
 I would also add `alias timestamp=rl-timestamp` to your bash profile.
-
 
 ## Usage
 
@@ -20,7 +16,6 @@ var timestamp = require('rl-timestamp');
 timestamp();
 //=> 'unicorns & rainbows'
 ```
-
 
 ## API
 
@@ -41,29 +36,43 @@ Default: `false`
 
 Silences print out of total hours.
 
-
 ## CLI
 
-```
+### Install
+
+```sh
 $ npm install --global rl-timestamp
 ```
 
-```
-$ timestamp --help
+### Default
 
-  Usage
-    timestamp [input]
-
-  Options
-    --foo  Lorem ipsum. [Default: false]
-
-  Examples
-    $ timestamp
-    unicorns & rainbows
-    $ timestamp ponies
-    ponies & rainbows
+```sh
+$ rl-timestamp
+15-12-28 18:12
 ```
 
+### With file
+
+```sh
+$ rl-timestamp -f testfile.txt
+111
+56
+85
+120
+=====
+Total:
+6 hours, 12 minutes
+```
+
+#### Without sum
+
+```sh
+$ rl-timestamp -f testfile.txt --no-sum
+111
+56
+85
+120
+```
 
 ## License
 
