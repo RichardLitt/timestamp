@@ -19,9 +19,11 @@ module.exports = function () {
     rl.on('line', function (line) {
       let timePeriod = line.split(' -- ')
       if (timePeriod.length !== 1) {
-        let difference = getMinuteDifference(timePeriod, 'minutes')
-        times.push(difference)
-        console.log(difference)
+        if (!opts.today || (opts.today && moment().isSame(moment(timePeriod[1], format), 'day'))) {
+          let difference = getMinuteDifference(timePeriod, 'minutes')
+          console.log(difference)
+          times.push(difference)
+        }
       }
     })
 

@@ -64,13 +64,20 @@ Total:
 6 hours, 12 minutes
 ```
 
-#### Without sum
+#### Without `no-sum` flag
 
 ```sh
 $ rl-timestamp -f testfile.txt --no-sum
 111
 56
 85
+120
+```
+
+#### With `today` flag
+
+```sh
+$ rl-timestamp -f testfile.txt --no-sum
 120
 ```
 
