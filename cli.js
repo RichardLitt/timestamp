@@ -3,15 +3,17 @@
 
 var argv = require('minimist')(process.argv.slice(2), {
   alias: {
-    f: 'file'
+    f: 'file',
+    s: 'sum'
+  },
+  default: {
+    sum: true
   }
 })
 var timestamp = require('./')
 
-if (argv['file'] && argv['sum'] === false) {
-  timestamp().readFileLines(argv['file'], false)
-} else if (argv['file']) {
-  timestamp().readFileLines(argv['file'])
+if (argv['file']) {
+  timestamp().readFileLines(argv['file'], { 'sum': argv['sum'] })
 } else {
   console.log(timestamp().stamp())
   process.exit(1)

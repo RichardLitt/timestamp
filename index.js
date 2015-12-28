@@ -9,7 +9,7 @@ module.exports = function () {
     return moment(b, format).diff(moment(a, format), outputMeasure)
   }
 
-  function readFileLines (filename, sum) {
+  function readFileLines (filename, opts) {
     var rl = require('readline').createInterface({
       input: require('fs').createReadStream(filename)
     })
@@ -26,7 +26,7 @@ module.exports = function () {
     })
 
     rl.on('close', function () {
-      if (sum !== false) {
+      if (opts.sum !== false) {
         let minutes = times.reduce(function (a, b) {
           return a + b
         })
