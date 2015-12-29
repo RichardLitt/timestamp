@@ -95,6 +95,14 @@ Total:
 2 hours, 0 minutes
 ```
 
+#### With `now` flag
+
+```sh
+$ rl-timestamp -f testfile.txt --now
+Duration so far:
+0 hours and 17 minutes
+```
+
 ## License
 
 MIT © [Richard Littauer](http://burntfen.com)
