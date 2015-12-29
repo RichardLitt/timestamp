@@ -3,7 +3,7 @@ var moment = require('moment')
 var format = 'YY-MM-DD HH:mm'
 
 module.exports = function () {
-  function getMinuteDifference (array, outputMeasure) {
+  function getDifference (array, outputMeasure) {
     let a = array[0]
     let b = array[1]
     return moment(b, format).diff(moment(a, format), outputMeasure)
@@ -19,8 +19,12 @@ module.exports = function () {
     rl.on('line', function (line) {
       let timePeriod = line.split(' -- ')
       if (timePeriod.length !== 1) {
-        if (!opts.today || (opts.today && moment().isSame(moment(timePeriod[1], format), 'day'))) {
-          let difference = getMinuteDifference(timePeriod, 'minutes')
+        if (
+          !opts.today && !opts.since ||
+          (opts.today && moment().isSame(moment(timePeriod[1], format), 'day')) ||
+          (opts.since && Math.abs(getDifference([moment().format(format), timePeriod[1]], 'day')) <= opts.since)
+        ) {
+          let difference = getDifference(timePeriod, 'minutes')
           console.log(difference)
           times.push(difference)
         }
@@ -42,7 +46,7 @@ module.exports = function () {
   }
 
   return {
-    getMinuteDifference: getMinuteDifference,
+    getDifference: getDifference,
     readFileLines: readFileLines,
     stamp: timestamp
   }

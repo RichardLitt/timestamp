@@ -74,6 +74,13 @@ $ rl-timestamp -f testfile.txt --no-sum
 120
 ```
 
+#### With `since` flag
+
+```sh
+$ rl-timestamp -f testfile.txt -since=5
+120
+```
+
 #### With `today` flag
 
 ```sh

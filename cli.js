@@ -4,7 +4,7 @@
 var argv = require('minimist')(process.argv.slice(2), {
   alias: {
     f: 'file',
-    s: 'sum',
+    s: 'since',
     t: 'today'
   },
   default: {
@@ -16,7 +16,8 @@ var timestamp = require('./')
 if (argv['file']) {
   timestamp().readFileLines(argv['file'], {
     'sum': argv['sum'],
-    'today': argv['today']
+    'today': argv['today'],
+    'since': argv['since']
   })
 } else {
   console.log(timestamp().stamp())
