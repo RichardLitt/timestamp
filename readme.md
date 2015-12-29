@@ -64,7 +64,7 @@ Total:
 6 hours, 12 minutes
 ```
 
-#### Without `no-sum` flag
+#### With `no-sum` flag
 
 ```sh
 $ rl-timestamp -f testfile.txt --no-sum
@@ -78,14 +78,21 @@ $ rl-timestamp -f testfile.txt --no-sum
 
 ```sh
 $ rl-timestamp -f testfile.txt -since=5
+85
 120
+=====
+Total:
+3 hours, 25 minutes
 ```
 
 #### With `today` flag
 
 ```sh
-$ rl-timestamp -f testfile.txt --no-sum
+$ rl-timestamp -f testfile.txt --today
 120
+=====
+Total:
+2 hours, 0 minutes
 ```
 
 ## License
