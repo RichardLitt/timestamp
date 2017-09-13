@@ -1,5 +1,7 @@
 # rl-timestamp [![Build Status](https://travis-ci.org/RichardLitt/timestamp.svg?branch=master)](https://travis-ci.org/RichardLitt/timestamp)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/RichardLitt/timestamp.svg)](https://greenkeeper.io/)
+
 > Some simple timestamp tools
 
 ## Install
